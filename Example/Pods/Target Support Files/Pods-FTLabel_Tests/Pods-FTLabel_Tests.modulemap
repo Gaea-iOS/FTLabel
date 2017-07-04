@@ -1,0 +1,6 @@
+framework module Pods_FTLabel_Tests {
+  umbrella header "Pods-FTLabel_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

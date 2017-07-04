@@ -1,0 +1,6 @@
+framework module Pods_FTLabel_Example {
+  umbrella header "Pods-FTLabel_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
