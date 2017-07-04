@@ -164,7 +164,7 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
 
         if parseText {
             clearActiveElements()
-            let newString = parseTextAndExtractActiveElements(mutAttrString)
+            parseTextAndExtractActiveElements(mutAttrString)
         }
 
         addLinkAttribute(mutAttrString)
@@ -208,10 +208,11 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
     }
 
     /// use regex check all link ranges
+    @discardableResult
     fileprivate func parseTextAndExtractActiveElements(_ attrString: NSAttributedString) -> String {
         var textString = attrString.string
-        var textLength = textString.utf16.count
-        var textRange = NSRange(location: 0, length: textLength)
+        let textLength = textString.utf16.count
+        let textRange = NSRange(location: 0, length: textLength)
 
         enabledTypes.forEach {
             let hashtagElements = ActiveBuilder.createElements(from: textString, for: $0, range: textRange)
