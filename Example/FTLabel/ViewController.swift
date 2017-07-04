@@ -28,6 +28,7 @@ class ViewController: UITableViewController/*, SwiftyLabelDelegate*/ {
             imageAttachment.image = UIImage(named: "SwiftyText")
             imageAttachment.attachmentTextVerticalAlignment = .center
             imageAttachment.padding = 10.0
+            imageAttachment.imageSize = CGSize(width: 30, height: 30)
             a.insertAttachment(imageAttachment, atIndex: 5)
             
             let imageAttachment2 = ImageTextAttachment()
