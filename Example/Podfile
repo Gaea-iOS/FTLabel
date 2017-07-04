@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FTLabel_Example' do
+  pod 'FTLabel', :path => '../'
+
+  target 'FTLabel_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
