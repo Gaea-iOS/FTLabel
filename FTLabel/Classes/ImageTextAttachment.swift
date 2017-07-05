@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum TBTextAttachmentTextVerticalAlignment {
+public enum ImageTextAttachmentVerticalAlignment {
     case center
 }
 
@@ -22,7 +22,7 @@ open class ImageTextAttachment: NSTextAttachment {
     // 当imageSize为.zero时生效
     open var isImageScallToFitFontLineHeight: Bool = true
     
-    open var attachmentTextVerticalAlignment: TBTextAttachmentTextVerticalAlignment = .center
+    open var attachmentTextVerticalAlignment: ImageTextAttachmentVerticalAlignment = .center
     
     open override func attachmentBounds(for textContainer: NSTextContainer?, proposedLineFragment lineFrag: CGRect, glyphPosition position: CGPoint, characterIndex charIndex: Int) -> CGRect {
         
@@ -31,13 +31,8 @@ open class ImageTextAttachment: NSTextAttachment {
         }
         
         let font = textContainer?.layoutManager?.textStorage?.attribute(NSFontAttributeName, at: charIndex, effectiveRange: nil) as? UIFont
-        let string = textContainer?.layoutManager?.textStorage?.mutableString
-        print("string = \(string)")
-
         let baselineHeight = font?.lineHeight ?? lineFrag.size.height
         let fontDescender = font?.descender ?? 0
-        
- 
         
         var attachmentSize: CGSize {
             if !imageSize.equalTo(.zero) {
@@ -49,12 +44,6 @@ open class ImageTextAttachment: NSTextAttachment {
                 return image.size
             }
         }
-        
-        print("fontLineHeight = \(font?.lineHeight)")
-        print("lineFrag.size.height = \(lineFrag.size.height)")
-        print("baselineHeight = \(baselineHeight)")
-        print("fontDescender = \(fontDescender)")
-        print("attachmentSize = \(attachmentSize)")
 
         switch self.attachmentTextVerticalAlignment {
         case .center:
