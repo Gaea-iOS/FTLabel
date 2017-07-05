@@ -34,6 +34,8 @@ open class ImageTextAttachment: NSTextAttachment {
         let baselineHeight = font?.lineHeight ?? lineFrag.size.height
         let fontDescender = font?.descender ?? 0
         
+ 
+        
         var attachmentSize: CGSize {
             if !imageSize.equalTo(.zero) {
                 return imageSize
@@ -45,10 +47,17 @@ open class ImageTextAttachment: NSTextAttachment {
             }
         }
         
+        print("fontLineHeight = \(font?.lineHeight)")
+        print("lineFrag.size.height = \(lineFrag.size.height)")
+        print("baselineHeight = \(baselineHeight)")
+        print("fontDescender = \(fontDescender)")
+        print("attachmentSize = \(attachmentSize)")
+
         switch self.attachmentTextVerticalAlignment {
         case .center:
             var y = fontDescender
             y -= (attachmentSize.height - baselineHeight) / 2 + imageOffetY
+            print("y = \(y)")
             return  CGRect(origin: CGPoint(x: 0, y: y), size: attachmentSize)
         }
     }

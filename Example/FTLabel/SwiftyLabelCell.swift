@@ -35,7 +35,6 @@ class SwiftyLabelCell: UITableViewCell {
         
 //        label.enabledTypes = [type1, type2, type3, type4]
         label.textColor = .black
-        label.highlightedTextColor = .yellow
         self.addSubview(label)
         
         label.snp.updateConstraints {
