@@ -15,7 +15,7 @@ extension NSTextAttachment {
 }
 
 extension NSAttributedString {
-    public func padding(_ padding: CGFloat) -> NSAttributedString {
+    public static func padding(_ padding: CGFloat) -> NSAttributedString {
         let paddingAttachment = BlankTextAttachment()
         paddingAttachment.width = padding
         let paddingAttributedString = NSAttributedString(attachment: paddingAttachment)
@@ -23,7 +23,7 @@ extension NSAttributedString {
     }
     
     public func addingPadding(_ padding: CGFloat) -> NSAttributedString {
-        return self.padding(padding) + self + self.padding(padding)
+        return .padding(padding) + self + .padding(padding)
     }
 }
 
