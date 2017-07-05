@@ -12,12 +12,12 @@ public enum ImageTextAttachmentVerticalAlignment {
     case center
 }
 
-// 参考https://stackoverflow.com/questions/22647439/what-is-the-relationship-between-a-font-glyph-ascender-and-descender-in-ios
+/// 参考https://stackoverflow.com/questions/22647439/what-is-the-relationship-between-a-font-glyph-ascender-and-descender-in-ios
 open class ImageTextAttachment: NSTextAttachment {
     
     open var imageSize: CGSize = .zero
     
-    open var imageOffetY: CGFloat = 0
+    open var baselineOffsetY: CGFloat = 0
     
     // 当imageSize为.zero时生效
     open var isImageScallToFitFontLineHeight: Bool = true
@@ -47,9 +47,8 @@ open class ImageTextAttachment: NSTextAttachment {
 
         switch self.attachmentTextVerticalAlignment {
         case .center:
-            var y = fontDescender
-            y -= (attachmentSize.height - baselineHeight) / 2 + imageOffetY
-            print("y = \(y)")
+            var y = fontDescender + baselineOffsetY
+            y += (baselineHeight - attachmentSize.height) / 2
             return  CGRect(origin: CGPoint(x: 0, y: y), size: attachmentSize)
         }
     }

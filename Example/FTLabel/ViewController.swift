@@ -17,7 +17,7 @@ class ViewController: UITableViewController/*, SwiftyLabelDelegate*/ {
             let a = NSMutableAttributedString(string: "This 2017年6月19日")
             a.append(UIImage(named: "icon_football")!.toAttributedString())
             a.append("daksdfadsf".toAttributedString())
-            a.append(UIImage(named: "SwiftyText")!.toAttributedString())
+            a.append(UIImage(named: "SwiftyText")!.toAttributedString(baselineOffsetY:  5))
             self.attributedTexts.append(a)
             i += 1
         }
