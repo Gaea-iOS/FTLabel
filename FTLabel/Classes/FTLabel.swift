@@ -161,7 +161,7 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
         }
 
         let mutAttrString = addLineBreak(attributedText)
-
+        
         if parseText {
             clearActiveElements()
             parseTextAndExtractActiveElements(mutAttrString)
@@ -192,19 +192,21 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
 
     /// add link attribute
     fileprivate func addLinkAttribute(_ mutAttrString: NSMutableAttributedString) {
-        var range = NSRange(location: 0, length: 0)
-        var attributes = mutAttrString.attributes(at: 0, effectiveRange: &range)
         
-        attributes[NSFontAttributeName] = font!
+        var attributes: [String: Any] = [:]
+        attributes[NSFontAttributeName] = font
         attributes[NSForegroundColorAttributeName] = textColor
-        mutAttrString.addAttributes(attributes, range: range)
+        (0..<mutAttrString.length).forEach {
+            mutAttrString.addAttributes(attributes, range: NSMakeRange($0, 1))
+        }
 
         activeElements.forEach {
-            attributes[NSForegroundColorAttributeName] = $0.key.normalColor
+            attributes[NSForegroundColorAttributeName] = $0.key.normalColor ?? textColor
             $0.value.forEach {
-                mutAttrString.setAttributes(attributes, range: $0.range)
+                mutAttrString.addAttributes(attributes, range: $0.range)
             }
         }
+        print("")
     }
 
     /// use regex check all link ranges

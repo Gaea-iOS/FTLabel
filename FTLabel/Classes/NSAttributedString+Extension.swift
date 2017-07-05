@@ -22,15 +22,10 @@ extension NSTextAttachment {
 
 
 extension UIImage {
-    public func toImageTextAttachment(baselineOffsetY: CGFloat = 0.0) -> ImageTextAttachment {
+    public func toImageTextAttachment() -> ImageTextAttachment {
         let attachment = ImageTextAttachment()
         attachment.image = self
-        attachment.baselineOffsetY = baselineOffsetY
         return attachment
-    }
-    
-    public func toAttributedString(baselineOffsetY: CGFloat = 0.0) -> NSAttributedString {
-        return self.toImageTextAttachment(baselineOffsetY: baselineOffsetY).toAttributedString()
     }
 }
 

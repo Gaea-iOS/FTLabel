@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uua-qu-7rU">
+                            <rect key="frame" x="0.0" y="112" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwiftyTextCell" rowHeight="84" id="qrN-FK-eAd" customClass="SwiftyLabelCell" customModule="FTLabel_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
@@ -24,7 +31,24 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qrN-FK-eAd" id="NVu-Tn-vho">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSn-Sj-Vq3" customClass="FTLabel" customModule="FTLabel">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="BSn-Sj-Vq3" secondAttribute="trailing" id="7Ql-DK-2EN"/>
+                                        <constraint firstItem="BSn-Sj-Vq3" firstAttribute="leading" secondItem="NVu-Tn-vho" secondAttribute="leading" id="PB3-Sv-qQC"/>
+                                        <constraint firstItem="BSn-Sj-Vq3" firstAttribute="top" secondItem="NVu-Tn-vho" secondAttribute="top" id="UjU-Rg-KK6"/>
+                                        <constraint firstAttribute="bottom" secondItem="BSn-Sj-Vq3" secondAttribute="bottom" id="tCV-x3-BGu"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="swiftyLabel" destination="BSn-Sj-Vq3" id="bnA-18-9ek"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,6 +57,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="List" id="7OI-Ef-MaG"/>
+                    <connections>
+                        <outlet property="label" destination="Uua-qu-7rU" id="9H9-c0-c02"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gff-wZ-7Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
