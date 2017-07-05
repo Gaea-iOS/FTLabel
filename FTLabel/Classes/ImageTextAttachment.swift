@@ -31,6 +31,9 @@ open class ImageTextAttachment: NSTextAttachment {
         }
         
         let font = textContainer?.layoutManager?.textStorage?.attribute(NSFontAttributeName, at: charIndex, effectiveRange: nil) as? UIFont
+        let string = textContainer?.layoutManager?.textStorage?.mutableString
+        print("string = \(string)")
+
         let baselineHeight = font?.lineHeight ?? lineFrag.size.height
         let fontDescender = font?.descender ?? 0
         

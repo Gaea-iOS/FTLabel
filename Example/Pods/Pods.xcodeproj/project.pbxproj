@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		041E745D1607966BA8FA24FDA58774DB /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593ADC9CCA6A730223A7A1761308569E /* ConstraintMakerExtendable.swift */; };
 		1313DD59C5763C276916823F5EA8FC79 /* Pods-FTLabel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEE73F2A607B6A4BD575A51E10FDF4D /* Pods-FTLabel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B1837351F0CCE5B002F5E82 /* NSAttributedString+ImageTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1837341F0CCE5B002F5E82 /* NSAttributedString+ImageTextAttachment.swift */; };
 		1B44C4081F0CA02A00FEA8AC /* NSAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B44C4071F0CA02A00FEA8AC /* NSAttributedString+Extension.swift */; };
 		2B88A1D0BF2BA5415A968B7D92778294 /* ActiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC829583EF4C1B174F80BDD16249FB9 /* ActiveType.swift */; };
 		2BF7F48B9CD2D326E5373F458436E23D /* Pods-FTLabel_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95454C119565BADA3E3E6B8F024ED0B3 /* Pods-FTLabel_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +89,7 @@
 		12E88B541786D560F47EDA8B1F69331F /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		13073B460DCA5A885901AEF7AB347371 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		1A6BDB5F0FBCAC3506F22584473F6020 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B1837341F0CCE5B002F5E82 /* NSAttributedString+ImageTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+ImageTextAttachment.swift"; sourceTree = "<group>"; };
 		1B44C4071F0CA02A00FEA8AC /* NSAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		20C75CA5900A3369CE485602C9835E86 /* Pods-FTLabel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FTLabel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		25E79546064BA44BF2591F7AE2C0AA8C /* Pods-FTLabel_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FTLabel_Example-resources.sh"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		75554FCA3F6A959A901F2B6629D5F180 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1B1837341F0CCE5B002F5E82 /* NSAttributedString+ImageTextAttachment.swift */,
 				9D7B686E560D03AB48514701389ACCF0 /* FTLabel.swift */,
 				0BC829583EF4C1B174F80BDD16249FB9 /* ActiveType.swift */,
 				5CB97A5C6566249C7F7B7D543FF3D46E /* ActiveBuilder.swift */,
@@ -591,6 +594,7 @@
 			files = (
 				BE091B27CD71B59E304223F9D9032C34 /* ActiveBuilder.swift in Sources */,
 				5C6C56C79E58342F76A5049B96771BB1 /* FTLabel.swift in Sources */,
+				1B1837351F0CCE5B002F5E82 /* NSAttributedString+ImageTextAttachment.swift in Sources */,
 				2B88A1D0BF2BA5415A968B7D92778294 /* ActiveType.swift in Sources */,
 				3385688A95E331D013C5FA6916A3EEE8 /* FTLabel-dummy.m in Sources */,
 				D3377EC41AA975488959614854101CBD /* ImageTextAttachment.swift in Sources */,

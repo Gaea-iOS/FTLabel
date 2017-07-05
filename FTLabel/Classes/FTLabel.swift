@@ -16,7 +16,7 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
 @IBDesignable open class FTLabel: UILabel {
     
     open var enabledTypes: [ActiveType] = []
-    
+        
     @IBInspectable public var lineSpacing: CGFloat = 0 {
         didSet { updateTextStorage(parseText: false) }
     }
