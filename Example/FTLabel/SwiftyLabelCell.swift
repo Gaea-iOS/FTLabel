@@ -13,27 +13,27 @@ import SnapKit
 
 class SwiftyLabelCell: UITableViewCell {
 
-    lazy var swiftyLabel: FTLabel = { [unowned self] in
-        let label = FTLabel()
+    lazy var swiftyLabel: UILabel = { [unowned self] in
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12)
         label.numberOfLines = 0
         
-        let type1 = ActiveType.hashtag(normalColor: .blue, highlightedColor: .red, tap: { text in
-            print("tap on hashtag \(text)")
-        })
-        let type2 = ActiveType.mention(normalColor: .cyan, highlightedColor: .purple, tap: { text in
-            print("tap on mention \(text)")
-        })
+//        let type1 = ActiveType.hashtag(normalColor: .blue, highlightedColor: .red, tap: { text in
+//            print("tap on hashtag \(text)")
+//        })
+//        let type2 = ActiveType.mention(normalColor: .cyan, highlightedColor: .purple, tap: { text in
+//            print("tap on mention \(text)")
+//        })
+//        
+//        let type3 = ActiveType.url(normalColor: .gray, highlightedColor: .brown, tap: { text in
+//            print("tap on url \(text)")
+//        })
+//
+//        let type4 = ActiveType.date(normalColor: .gray, highlightedColor: .brown, tap: { text in
+//            print("tap on url \(text)")
+//        })
         
-        let type3 = ActiveType.url(normalColor: .gray, highlightedColor: .brown, tap: { text in
-            print("tap on url \(text)")
-        })
-
-        let type4 = ActiveType.date(normalColor: .gray, highlightedColor: .brown, tap: { text in
-            print("tap on url \(text)")
-        })
-        
-        label.enabledTypes = [type1, type2, type3, type4]
+//        label.enabledTypes = [type1, type2, type3, type4]
         label.textColor = .black
         label.highlightedTextColor = .yellow
         self.addSubview(label)
