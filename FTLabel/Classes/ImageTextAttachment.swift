@@ -14,8 +14,6 @@ public enum TBTextAttachmentTextVerticalAlignment {
 
 // 参考https://stackoverflow.com/questions/22647439/what-is-the-relationship-between-a-font-glyph-ascender-and-descender-in-ios
 open class ImageTextAttachment: NSTextAttachment {
-
-    open var padding: CGFloat = 0.0
     
     open var imageSize: CGSize = .zero
     
@@ -54,17 +52,3 @@ open class ImageTextAttachment: NSTextAttachment {
 }
 
 
-/**
- Blank placeholder usded for image padding
- */
-open class BlankTextAttachment: NSTextAttachment {
-    open var width: CGFloat {
-        get{
-            return bounds.width
-        }
-        set {
-            bounds.size.width = newValue
-            bounds.size.height = 1
-        }
-    }
-}

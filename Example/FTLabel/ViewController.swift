@@ -17,25 +17,32 @@ class ViewController: UITableViewController/*, SwiftyLabelDelegate*/ {
         var i = 0
         while i < 75 {
             
-            let font = UIFont.systemFont(ofSize: 15)
+//            let font = UIFont.systemFont(ofSize: 15)
             
             //            let a = NSMutableAttributedString(string: "iamgmldkakjdfjlkajsdj", attributes: [NSFontAttributeName: font])
             //            let a = NSMutableAttributedString(string: "我是中文字符，我是中文字符，我是中文字符，我是中文字符，我是中文字符，我是dkajdlflig，我是中文字符，我是中文字符", attributes: [NSFontAttributeName: font])
-            let a = NSMutableAttributedString(string: "This 2017年6月19日 https://www.baidu.com is a post with #hashtags and 18826404514 a @userhandle.This is a post with #hashtags and a @userhandle.This is a post with #hashtags and a @userhandle.This is a post with #hashtags and a @userhandle.", attributes: [NSFontAttributeName: font])
+//            let a = NSMutableAttributedString(string: "This 2017年6月19日 https://www.baidu.com is a post with #hashtags and 18826404514 a @userhandle.This is a post with #hashtags and a @userhandle.This is a post with #hashtags and a @userhandle.This is a post with #hashtags and a @userhandle.", attributes: [NSFontAttributeName: font])
+            let a = NSMutableAttributedString(string: "This 2017年6月19日")
+
             
             
             let imageAttachment = ImageTextAttachment()
             imageAttachment.image = UIImage(named: "SwiftyText")
             imageAttachment.attachmentTextVerticalAlignment = .center
-            imageAttachment.padding = 10.0
-            imageAttachment.imageSize = CGSize(width: 30, height: 30)
-            a.insertAttachment(imageAttachment, atIndex: 5)
+//            imageAttachment.padding = 10.0
+//            imageAttachment.imageSize = CGSize(width: 30, height: 30)®
+//            a.insertAttachment(imageAttachment, atIndex: 5)
             
-            let imageAttachment2 = ImageTextAttachment()
-            imageAttachment2.image = UIImage(named: "SwiftyText")
-            imageAttachment2.attachmentTextVerticalAlignment = .center
-            imageAttachment2.padding = 10.0
-            a.insertAttachment(imageAttachment2, atIndex: a.length - 28)
+//            a += imageAttachment.toAttributedString().addingPadding(10)
+            
+            a.append(imageAttachment.toAttributedString().addingPadding(10))
+//            a.append(NSAttributedString(attachment: imageAttachment).addingPadding(10))
+            
+//            let imageAttachment2 = ImageTextAttachment()
+//            imageAttachment2.image = UIImage(named: "SwiftyText")
+//            imageAttachment2.attachmentTextVerticalAlignment = .center
+//            imageAttachment2.padding = 10.0
+//            a.insertAttachment(imageAttachment2, atIndex: a.length - 28)
             
             
             self.attributedTexts.append(a)
@@ -75,11 +82,9 @@ class ViewController: UITableViewController/*, SwiftyLabelDelegate*/ {
         print("row selected")
     }
     
-    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        let attributedText = self.attributedTexts[indexPath.row]
-    //        let size = attributedText.proposedSizeWithConstrainedSize(CGSize(width: tableView.bounds.width, height: .greatestFiniteMagnitude), exclusionPaths: nil, lineBreakMode: nil, maximumNumberOfLines: 0)
-    //        return size.height
-    //    }
+        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 50
+        }
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
