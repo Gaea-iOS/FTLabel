@@ -17,6 +17,8 @@ open class ImageTextAttachment: NSTextAttachment {
     
     open var imageSize: CGSize = .zero
     
+    open var imageOffetY: CGFloat = 0
+    
     // 当imageSize为.zero时生效
     open var isImageScallToFitFontLineHeight: Bool = true
     
@@ -28,27 +30,26 @@ open class ImageTextAttachment: NSTextAttachment {
             return super.attachmentBounds(for: textContainer, proposedLineFragment: lineFrag, glyphPosition: position, characterIndex: charIndex)
         }
         
-        let font = textContainer?.layoutManager?.textStorage?.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
-        let fontLineHeight = font?.lineHeight ?? lineFrag.size.height
+        let font = textContainer?.layoutManager?.textStorage?.attribute(NSFontAttributeName, at: charIndex, effectiveRange: nil) as? UIFont
+        let baselineHeight = font?.lineHeight ?? lineFrag.size.height
         let fontDescender = font?.descender ?? 0
         
         var attachmentSize: CGSize {
             if !imageSize.equalTo(.zero) {
                 return imageSize
             } else if isImageScallToFitFontLineHeight && image.size.height != 0 {
-                let width = fontLineHeight * image.size.width / image.size.height
-                return CGSize(width: width, height: fontLineHeight)
+                let width = baselineHeight * image.size.width / image.size.height
+                return CGSize(width: width, height: baselineHeight)
             } else {
                 return image.size
             }
         }
         
         switch self.attachmentTextVerticalAlignment {
-        case .center :
-            let y = (fontLineHeight - attachmentSize.height) / 2 + fontDescender
+        case .center:
+            var y = fontDescender
+            y -= (attachmentSize.height - baselineHeight) / 2 + imageOffetY
             return  CGRect(origin: CGPoint(x: 0, y: y), size: attachmentSize)
         }
     }
 }
-
-

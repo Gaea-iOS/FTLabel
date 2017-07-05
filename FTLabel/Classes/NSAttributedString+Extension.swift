@@ -8,9 +8,28 @@
 
 import Foundation
 
+extension String {
+    public func toAttributedString(attributes: [String: Any]? = nil) -> NSAttributedString {
+        return NSAttributedString(string: self, attributes: attributes)
+    }
+}
+
 extension NSTextAttachment {
     public func toAttributedString() -> NSAttributedString {
         return NSAttributedString(attachment: self)
+    }
+}
+
+
+extension UIImage {
+    public func toImageTextAttachment() -> ImageTextAttachment {
+        let attachment = ImageTextAttachment()
+        attachment.image = self
+        return attachment
+    }
+    
+    public func toAttributedString() -> NSAttributedString {
+        return self.toImageTextAttachment().toAttributedString()
     }
 }
 

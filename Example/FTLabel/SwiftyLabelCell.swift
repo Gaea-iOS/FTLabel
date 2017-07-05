@@ -16,7 +16,7 @@ class SwiftyLabelCell: UITableViewCell {
     lazy var swiftyLabel: FTLabel = { [unowned self] in
         let label = FTLabel()
         label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         
         let type1 = ActiveType.hashtag(normalColor: .blue, highlightedColor: .red, tap: { text in
             print("tap on hashtag \(text)")
@@ -48,6 +48,7 @@ class SwiftyLabelCell: UITableViewCell {
 //            $0.right.equalToSuperview()
 //
 //        })
+        label.backgroundColor = .blue
         return label
     }()
     
