@@ -3,6 +3,7 @@ use_frameworks!
 target 'FTLabel_Example' do
   pod 'FTLabel', :path => '../'
   pod 'SnapKit'
+  pod 'FoundationExtension', :git=> 'https://github.com/Gaea-iOS/FoundationExtension.git'
 
   target 'FTLabel_Tests' do
     inherit! :search_paths

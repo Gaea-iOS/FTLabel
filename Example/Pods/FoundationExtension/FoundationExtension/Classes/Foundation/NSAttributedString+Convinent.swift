@@ -1,5 +1,5 @@
 //
-//  NSAttributedString+Extension.swift
+//  NSAttributedString+Convinent.swift
 //  Pods
 //
 //  Created by 王小涛 on 2017/7/5.
@@ -39,6 +39,14 @@ extension NSAttributedString {
     
     public func addingPadding(_ padding: CGFloat) -> NSAttributedString {
         return .padding(padding) + self + .padding(padding)
+    }
+    
+    public func addingLeftPadding(_ padding: CGFloat) -> NSAttributedString {
+        return .padding(padding) + self
+    }
+    
+    public func addingRightPadding(_ padding: CGFloat) -> NSAttributedString {
+        return self + .padding(padding)
     }
 }
 

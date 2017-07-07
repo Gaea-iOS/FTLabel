@@ -1,9 +1,9 @@
 {
   "name": "FTLabel",
-  "version": "0.1.0",
-  "summary": "A short description of FTLabel.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/wangxiaotao/FTLabel",
+  "version": "0.8.0",
+  "summary": "This is a full text label include image and activity type of texts to show.",
+  "description": "This is a full text label include image and activity type of texts (like url, phone, @, # and more for custom) to show.",
+  "homepage": "https://github.com/Gaea-iOS/FTLabel",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "wangxiaotao": "445242970@qq.com"
   },
   "source": {
-    "git": "https://github.com/wangxiaotao/FTLabel.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Gaea-iOS/FTLabel.git",
+    "tag": "0.8.0"
   },
   "platforms": {
     "ios": "8.0"

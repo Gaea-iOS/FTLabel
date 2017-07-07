@@ -1,19 +1,29 @@
 PODS:
-  - FTLabel (0.1.0)
+  - FoundationExtension (0.1.0)
+  - FTLabel (0.8.0)
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
+  - FoundationExtension (from `https://github.com/Gaea-iOS/FoundationExtension.git`)
   - FTLabel (from `../`)
   - SnapKit
 
 EXTERNAL SOURCES:
+  FoundationExtension:
+    :git: https://github.com/Gaea-iOS/FoundationExtension.git
   FTLabel:
     :path: ../
 
+CHECKOUT OPTIONS:
+  FoundationExtension:
+    :commit: df474e791f0717308b2ed3f7a829dc34ce68494c
+    :git: https://github.com/Gaea-iOS/FoundationExtension.git
+
 SPEC CHECKSUMS:
-  FTLabel: 4987d87e49406f68db36d45d2b0f051d0b93ff87
+  FoundationExtension: 5891bcac117018d40823663b29bbbc678b635e4c
+  FTLabel: c20c941dd008b1c44a58f8711862e24f97bb7a55
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: ece1bc4abef8d3313d4ba040d68c702fe79b311c
+PODFILE CHECKSUM: 72cbb84ade78d7e6c0da497dd8d69636cfb815b9
 
 COCOAPODS: 1.2.1
