@@ -8,6 +8,7 @@
 
 import UIKit
 import FTLabel
+import FoundationExtension
 
 enum PBMatchEventType {
     case matchEventGoal
