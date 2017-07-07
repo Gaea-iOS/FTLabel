@@ -17,7 +17,7 @@ class SwiftyLabelCell: UITableViewCell {
         didSet {
             swiftyLabel.numberOfLines = 0
 
-            swiftyLabel.font = UIFont.systemFont(ofSize: 15)
+            swiftyLabel.font = UIFont.systemFont(ofSize: 20)
             
             swiftyLabel.textColor = UIColor.blue
             let type1 = ActiveType.hashtag(normalColor: .blue, highlightedColor: .red, tap: { text in

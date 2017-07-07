@@ -21,12 +21,12 @@ public enum ImageTextAttachmentVerticalAlignment {
 
 open class ImageTextAttachment: NSTextAttachment {
     
-    private var imageSize: CGSize = .zero
+    open var imageSize: CGSize = .zero
     
     // 当imageSize为.zero时生效
     open var isImageScallToFitFontLineHeight: Bool = true
     
-    open var attachmentTextVerticalAlignment: ImageTextAttachmentVerticalAlignment = .bottom
+    open var attachmentTextVerticalAlignment: ImageTextAttachmentVerticalAlignment = .center
     
     open override func attachmentBounds(for textContainer: NSTextContainer?, proposedLineFragment lineFrag: CGRect, glyphPosition position: CGPoint, characterIndex charIndex: Int) -> CGRect {
         
@@ -53,7 +53,6 @@ open class ImageTextAttachment: NSTextAttachment {
 
         switch self.attachmentTextVerticalAlignment {
         case .bottom:
-            y = y / 2
             break
         case .center:
             y += (lineFrag.height - attachmentSize.height) / 2

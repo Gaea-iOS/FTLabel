@@ -60,7 +60,7 @@ class ViewController: UITableViewController/*, SwiftyLabelDelegate*/ {
 
             let football: NSAttributedString = {
                 let attachment = UIImage(named: "SwiftyText")!.toImageTextAttachment()
-//                attachment.imageSize = CGSize(width: 50, height: 50)
+                attachment.imageSize = CGSize(width: 50, height: 50)
                 return attachment.toAttributedString()
             }()
 //            let text2 = NSAttributedString(string: "@hash daksdfadsf", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 50), NSForegroundColorAttributeName: UIColor.yellow])
