@@ -32,22 +32,33 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSn-Sj-Vq3" customClass="FTLabel" customModule="FTLabel">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSn-Sj-Vq3" customClass="FTLabel" customModule="FTLabel">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cnq-46-Kr3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="BSn-Sj-Vq3" secondAttribute="trailing" id="7Ql-DK-2EN"/>
+                                        <constraint firstItem="cnq-46-Kr3" firstAttribute="leading" secondItem="NVu-Tn-vho" secondAttribute="leading" id="GTn-bA-tJf"/>
                                         <constraint firstItem="BSn-Sj-Vq3" firstAttribute="leading" secondItem="NVu-Tn-vho" secondAttribute="leading" id="PB3-Sv-qQC"/>
                                         <constraint firstItem="BSn-Sj-Vq3" firstAttribute="top" secondItem="NVu-Tn-vho" secondAttribute="top" id="UjU-Rg-KK6"/>
+                                        <constraint firstAttribute="trailing" secondItem="cnq-46-Kr3" secondAttribute="trailing" id="aLP-GA-btS"/>
+                                        <constraint firstItem="cnq-46-Kr3" firstAttribute="top" secondItem="NVu-Tn-vho" secondAttribute="top" id="l7g-uY-fCu"/>
+                                        <constraint firstAttribute="bottom" secondItem="cnq-46-Kr3" secondAttribute="bottom" id="miY-Or-WS2"/>
                                         <constraint firstAttribute="bottom" secondItem="BSn-Sj-Vq3" secondAttribute="bottom" id="tCV-x3-BGu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="swiftyLabel" destination="BSn-Sj-Vq3" id="bnA-18-9ek"/>
+                                    <outlet property="swiftyLabel" destination="cnq-46-Kr3" id="0bB-Lr-iMp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

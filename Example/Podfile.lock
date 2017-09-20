@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   FoundationExtension:
-    :commit: df474e791f0717308b2ed3f7a829dc34ce68494c
+    :commit: 996cc9426a50134be90a2f6a7e67ba31a8a96fc2
     :git: https://github.com/Gaea-iOS/FoundationExtension.git
 
 SPEC CHECKSUMS:

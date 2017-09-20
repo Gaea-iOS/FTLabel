@@ -193,15 +193,15 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
     /// add link attribute
     fileprivate func addLinkAttribute(_ mutAttrString: NSMutableAttributedString) {
         
-        var attributes: [String: Any] = [:]
-        attributes[NSFontAttributeName] = font
-        attributes[NSForegroundColorAttributeName] = textColor
+        var attributes: [NSAttributedStringKey: Any] = [:]
+        attributes[NSAttributedStringKey.font] = font
+        attributes[NSAttributedStringKey.foregroundColor] = textColor
         (0..<mutAttrString.length).forEach {
             mutAttrString.addAttributes(attributes, range: NSMakeRange($0, 1))
         }
 
         activeElements.forEach {
-            attributes[NSForegroundColorAttributeName] = $0.key.normalColor ?? textColor
+            attributes[NSAttributedStringKey.foregroundColor] = $0.key.normalColor ?? textColor
             $0.value.forEach {
                 mutAttrString.addAttributes(attributes, range: $0.range)
             }
@@ -232,12 +232,12 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
         var range = NSRange(location: 0, length: 0)
         var attributes = mutAttrString.attributes(at: 0, effectiveRange: &range)
         
-        let paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
+        let paragraphStyle = attributes[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
         paragraphStyle.alignment = textAlignment
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.minimumLineHeight = minimumLineHeight > 0 ? minimumLineHeight: self.font.pointSize * 1.14
-        attributes[NSParagraphStyleAttributeName] = paragraphStyle
+        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
         mutAttrString.setAttributes(attributes, range: range)
 
         return mutAttrString
@@ -252,9 +252,9 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
         let type = selectedElement.type
 
         if isHighlighted {
-            attributes[NSForegroundColorAttributeName] = type.highlightedColor
+            attributes[NSAttributedStringKey.foregroundColor] = type.highlightedColor
         } else {
-            attributes[NSForegroundColorAttributeName] = type.normalColor
+            attributes[NSAttributedStringKey.foregroundColor] = type.normalColor
         }
 
         textStorage.addAttributes(attributes, range: selectedElement.range)
